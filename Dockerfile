@@ -1,9 +1,5 @@
-echo "--generate dockerfile--"
-touch Dockerfile && chmod 0777 Dockerfile
-cat >> Dockerfile << EOF
 FROM elgalu/selenium
 USER root
-#COPY source.list /etc/apt/sources.list
 RUN set -eux; \
 	{ \
 		echo 'Package: php*'; \
@@ -208,4 +204,3 @@ EXPOSE 9000
 COPY supervisord.conf /etc/supervisor/
 
 CMD ["entry.sh"]
-EOF
